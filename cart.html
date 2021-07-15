@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      @media screen and (min-width: 600px) {
+        .nav li {
+          width: 120px;
+          border-bottom: none;
+          height: 50px;
+          line-height: 50px;
+          font-size: 1, 4em;
+        }
+      }
+      nav ul {
+        list-style-type: none;
+        background-color: #444;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+      }
+      .nav li {
+        font-family: "Oswald", sans-serif;
+        font-size: 1.2em;
+        line-height: 40px;
+        height: 40px;
+        border-bottom: 1px solid #888;
+        display: inline-block;
+        margin-left: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="nav">
+      <ul>
+        <li class="home">
+          <a href="https://rajasgandhi.github.io/number1socks/">Login/Home</a>
+        </li>
+        <li class="about">
+          <a href="https://rajasgandhi.gitub.io/number1socks/about-us"
+            >About US</a
+          >
+        </li>
+        <li class="news">
+          <a href="https://rajasgandhi.githüb.io/number1socks/products"
+            >Products</a
+          >
+        </li>
+      </ul>
+    </div>
+    <h1>Your cart</h1>
+    <table style="width: 100%">
+      <tr>
+        <th>Item</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Cost</th>
+      </tr>
+      <tr>
+        <td>Sock 1</td>
+        <td id="quantitysock1"></td>
+        <td>$20</td>
+        <td id="totalsock1"></td>
+      </tr>
+      <tr>
+        <td>Sock 2</td>
+        <td id="quantitysock2"></td>
+        <td>$15</td>
+        <td id="totalsock2"></td>
+      </tr>
+      <tr>
+        <td>Sock 3</td>
+        <td id="quantitysock3"></td>
+        <td>$30</td>
+        <td id="totalsock3"></td>
+      </tr>
+      <tr>
+          <td></td>
+          <td></td>
+          <td>Total Price:</td>
+          <td id="fulltotal"></td>
+      </tr>
+    </table>
+    <button>Checkout</button>
+    <script>
+      var querystring = decodeURIComponent(window.location.search);
+      querystring = querystring.substring(1);
+      var queries = querystring.split("&");
+      var firstelem = queries[0].substring(10);
+      var secondelem = queries[1].substring(10);
+      var thirdelem = queries[2].substring(10);
+      document.getElementById("quantitysock1").innerHTML = firstelem;
+      document.getElementById("quantitysock2").innerHTML = secondelem;
+      document.getElementById("quantitysock3").innerHTML = thirdelem;
+      document.getElementById("totalsock1").innerHTML = "$" + firstelem * 20;
+      document.getElementById("totalsock2").innerHTML = "$" + secondelem * 15;
+      document.getElementById("totalsock3").innerHTML = "$" + thirdelem * 30;
+      document.getElementById("fulltotal").innerHTML =
+        "$" + ((firstelem * 20) + (secondelem * 15) + (thirdelem * 30));
+    </script>
+  </body>
+</html>

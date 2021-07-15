@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      @media screen and (min-width: 600px) {
+        .nav li {
+          width: 120px;
+          border-bottom: none;
+          height: 50px;
+          line-height: 50px;
+          font-size: 1, 4em;
+        }
+      }
+      nav ul {
+        list-style-type: none;
+        background-color: #444;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+      }
+      .nav li {
+        font-family: "Oswald", sans-serif;
+        font-size: 1.2em;
+        line-height: 40px;
+        height: 40px;
+        border-bottom: 1px solid #888;
+        display: inline-block;
+        margin-left: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="nav">
+      <ul>
+        <li class="home">
+          <a href="https://rajasgandhi.github.io/number1socks/">Login/Home</a>
+        </li>
+        <li class="about">
+          <a href="https://rajasgandhi.github.io/number1socks/about-us"
+            >About US</a
+          >
+        </li>
+        <li class="news">
+          <a href="https://rajasgandhi.github.io/number1socks/products"
+            >Products</a
+          >
+        </li>
+      </ul>
+    </div>
+    <table style="width: 100%">
+      <tr>
+        <th>Item 1</th>
+        <th>Item 2</th>
+        <th>Item 3</th>
+      </tr>
+      <tr>
+        <td>Premium Sock 1</td>
+        <td>Premium Sock 2</td>
+        <td>Premium Sock 3</td>
+      </tr>
+      <tr>
+        <td>
+          <img
+            src="https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1586987257-onsocks-1586987248.jpg?crop=1xw:1xh;center,top&resize=480%3A%2A"
+            width="200"
+          />
+        </td>
+        <td>
+          <img
+            src="https://www.compressport.com/inter/24648-large_default/thick-padded-sock.jpg"
+            width="200"
+          />
+        </td>
+        <td>
+          <img
+            src="https://www.collinsdictionary.com/images/full/sock_99256316_1000.jpg"
+            width="200"
+          />
+        </td>
+      </tr>
+    </table>
+
+    <form onsubmit="quantityclick(); return false;" name="form1">
+      Quantity of Sock 1: <input name="quantity1" type="number" /> <br />
+      Quantity of Sock 2: <input name="quantity2" type="number" /> <br />
+      Quantity of Sock 3: <input name="quantity3" type="number" /> <br />
+      <input type="submit">
+    </form>
+    <script>
+      function quantityclick() {
+        var value1 = document.form1.quantity1.value;
+        var value2 = document.form1.quantity2.value;
+        var value3 = document.form1.quantity3.value;
+        var querystring =
+          "?quantity1=" +
+          value1 +
+          "&quantity2=" +
+          value2 +
+          "&quantity3=" +
+          value3;
+        window.location.href =
+          "http://rajasgandhi.github.io/number1socks/cart.html" + querystring;
+        //return false;
+      }
+    </script>
+  </body>
+</html>
